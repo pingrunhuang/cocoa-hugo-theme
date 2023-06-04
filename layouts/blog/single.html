@@ -21,6 +21,7 @@
             </div>
             <div class="markdown">
                 {{ .Content }}
+                {{ partial "comment.html" . }}
                 <br>
                 {{ if .Params.tags }}
                   <div class="tags">

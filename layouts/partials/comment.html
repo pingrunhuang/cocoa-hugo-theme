@@ -1,0 +1,47 @@
+{{ if .Site.Params.disqus }}
+    <div class="disqus">
+    {{ template "_internal/disqus.html" . }}
+    </div>
+{{ end }}
+
+{{ if .Site.Params.gitalk }}
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+    const gitalk = new Gitalk({
+        clientID: "{{ .Site.Params.gitalk_clientID }}",
+        clientSecret: "{{ .Site.Params.gitalk_clientSecret }}",
+        repo: "{{ .Site.Params.gitalk_repo }}",
+        owner: "{{ .Site.Params.gitalk_owner }}",
+        admin: "{{ .Site.Params.gitalk_admin }}",// facebook-like distraction free mode
+        distractionFreeMode: true
+    })
+    gitalk.render('gitalk-container')
+    </script>
+{{ end }}
+{{ if .Site.Params.isso }}
+    <section id="isso-thread"></section>
+    <script data-isso="{{ .Site.Params.isso_url }}" src="{{ .Site.Params.isso_url }}/js/embed.min.js" 
+    data-isso-css="true"
+    data-isso-lang="en"
+    data-isso-reply-to-self="true"
+    data-isso-require-author="true"
+    data-isso-require-email="false"
+    data-isso-max-comments-top="10"
+    data-isso-max-comments-nested="5"
+    data-isso-reveal-on-click="5"
+    data-isso-avatar="true"
+    data-isso-avatar-bg="#f0f0f0"
+    data-isso-avatar-fg="#9abf88 #5698c4 #e279a3 #9163b6 ..."
+    data-isso-vote="true"
+    data-vote-levels="[-5,5,15]"></script>
+{{ end }}
+{{if .Site.Params.cusdis }}
+<div id="cusdis_thread"
+    data-host="https://cusdis.com"
+    data-app-id="05f1cb3f-5125-46bb-9d92-7ba3e83261f3"
+    data-page-id="{{ .File.UniqueID }}"
+    data-page-url="{{ .Permalink }}"
+    data-page-title="{{ .Title }}">
+</div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+{{ end }}
