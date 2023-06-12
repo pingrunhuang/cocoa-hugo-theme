@@ -14,10 +14,9 @@
                 {{ else if eq .Site.Params.bloggroupby "year" }}
                     {{ $.Scratch.Set "datespec" "2006" }}
                 {{ end }}
-
                 {{ if not ($.Scratch.Get "datespec") }}
                     {{ range .Data.Pages.ByPublishDate.Reverse }}
-                        {{ partial "li.html" . }}
+                    {{ partial "li.html" . }}
                     {{ end }}
                 {{ else }}
                     {{ range .Data.Pages.ByPublishDate.GroupByDate ($.Scratch.Get "datespec") "desc" }}

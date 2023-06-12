@@ -1,3 +1,6 @@
+<div>
+    <em> Feel free to leave a comment below, and until then see you next time!</em>
+</div>
 {{ if .Site.Params.disqus }}
     <div class="disqus">
     {{ template "_internal/disqus.html" . }}
@@ -44,4 +47,12 @@
     data-page-title="{{ .Title }}">
 </div>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+{{ end }}
+
+{{ if .Site.Params.vpn_ref_link }}
+<a href="{{ .Site.Params.vpn_ref_link }}" target="_blank" rel="noopener">
+    <p style="color: forestgreen;">
+        Buy a vpn
+    </p>
+</a>
 {{ end }}

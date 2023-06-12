@@ -1,5 +1,13 @@
 <!-- Google Analytics -->
-{{ template "_internal/google_analytics_async.html" . }}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZN52G57MV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZN52G57MV');
+</script>
 
 {{ if .Site.Params.highlightjs }}
   {{ if .Site.Params.highlightjs_url }}
